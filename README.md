@@ -1,44 +1,82 @@
+
 # CatChat
 
-*Chatroom for coders, not cats.*
+《[Flask Web 开发实战](http://helloflask.com/book)》 第11章聊天室
 
-> Example application for *[Python Web Development with Flask](http://helloflask.com/en/book)* (《[Flask Web 开发实战](http://helloflask.com/book)》).
+Demo: http://CatChat.helloflask.com
 
-Demo: http://catchat.helloflask.com
+![Screenshot](http://helloflask.com/screenshots/CatChat.png)
 
-![Screenshot](http://helloflask.com/screenshots/catchat.png)
 
-## Installation
 
-clone:
+## 安装
+
+git clone源码
 ```
-$ git clone https://github.com/greyli/catchat.git
-$ cd catchat
+$ git clone https://github.com/greyli/CatChat.git
+$ cd CatChat
 ```
-create & activate virtual env then install dependency:
 
-with venv/virtualenv + pip:
+## 安装依赖
+当前`CatChat`的实践仅支持python2
+
+flask版本查看，如果依赖的是python3，则需要重新安装
 ```
-$ python -m venv env  # use `virtualenv env` for Python2, use `python3 ...` for Python3 on Linux & macOS
-$ source env/bin/activate  # use `env\Scripts\activate` on Windows
+$ flask --version
+Python 3.5.2
+Flask 1.1.2
+Werkzeug 1.0.1
+```
+
+重新安装flask，通过pip(python2)安装
+```
 $ pip install -r requirements.txt
 ```
-or with Pipenv:
+
+查看flask版本，是否依赖于pyton2
 ```
-$ pipenv install --dev
-$ pipenv shell
+$ flask --version
+Flask 1.0.2
+Python 2.7.12 (default, Apr 15 2020, 17:07:12) 
+[GCC 5.4.0 20160609]
 ```
-generate fake data then run:
+
+## 应用启动
+初始化本地数据库
+
 ```
 $ flask forge
 $ flask run
-* Running on http://127.0.0.1:5000/
 ```
-Test account:
+
+
+启动http服务
+
+```
+## Running on http://0.0.0.0:8080/
+$ flask run -h 0.0.0.0  -p 8080 
+```
+
+在本地尝试访问服务
+
+```
+$ curl http://localhost:8080
+```
+
+通过浏览器访问服务
+
+```
+http://IP:8080
+```
+
+Test account
+
+```
+
 * email: `admin@helloflask.com`
 * password: `helloflask`
+```
 
-## License
-
-This project is licensed under the MIT License (see the
-[LICENSE](LICENSE) file for details).
+ 
+ 
+ 
